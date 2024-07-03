@@ -4,6 +4,25 @@
     {
         static void Main(string[] args)
         {
+            int firstArray, secondArray;
+            Console.WriteLine("Создаем матрицу");
+            Console.WriteLine("Введите размер первой строки");
+            bool correctFirstArray = int.TryParse(Console.ReadLine(), out firstArray);
+
+            Console.WriteLine("Введите размер второй строки");
+            bool correctSecondArray = int.TryParse(Console.ReadLine(), out secondArray);
+            if (correctFirstArray && correctSecondArray)
+            {
+
+            }
+            else
+            {
+                Console.WriteLine("Вы ввели что-то не то");
+            }
+        }
+
+        static void Examples()
+        {
             //Список
             List<int> list = new List<int>();
             list.Add(1);
