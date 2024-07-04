@@ -41,6 +41,10 @@
                         {
                             myArray[i][j] = input;
                         }
+                        else
+                        {
+                            Console.WriteLine("Вы ввели что-то не то");
+                        }
                     }
                 }
 
