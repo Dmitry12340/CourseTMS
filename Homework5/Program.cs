@@ -1,4 +1,6 @@
-﻿namespace Homework5
+﻿using System.Text;
+
+namespace Homework5
 {
     internal class Program
     {
@@ -45,10 +47,16 @@
                 switch (Console.ReadLine())
                 {
                     case "0":
-                        run = false; 
+                        run = false;
                         break;
                     case "1":
                         FindQuantityNumbers(str);
+                        break;
+                    case "2":
+                        FindLongestWord(str);
+                        break;
+                    case "3":
+                        ReplaceNumbersWithWords(str);
                         break;
                 }
             }
@@ -92,6 +100,54 @@
 
             Console.Clear();
             Console.WriteLine($"Наибольшее колличество чисел в слове {internalStr[index]}\n");
+        }
+
+        static void FindLongestWord(string str)
+        {
+            string[] internalStr = str.Split(' ');
+            int index = 0;
+
+            //Ищем самое длинное слово
+            for (int i = 0; i < internalStr.Length; i++)
+            {
+                if (internalStr[i].Length > internalStr[index].Length)
+                {
+                    index = i;
+                }
+            }
+
+            int count = 0;
+            //Ишем сколько раз повторяется самое длинное слово
+            for (int i = 0; i < internalStr.Length; i++)
+            {
+                if (internalStr[i] == internalStr[index])
+                {
+                    count++;
+                }
+            }
+
+            Console.Clear();
+            Console.WriteLine($"Самое длинное слово {internalStr[index]}\n" +
+                $"Оно повторяется {count} раз\n");
+        }
+
+        static void ReplaceNumbersWithWords(string str)
+        {
+            StringBuilder stringBuilder = new StringBuilder(str);
+            stringBuilder.Replace("0", "Ноль");
+            stringBuilder.Replace("1", "Один");
+            stringBuilder.Replace("2", "Два");
+            stringBuilder.Replace("3", "Три");
+            stringBuilder.Replace("4", "Четыре");
+            stringBuilder.Replace("5", "Пять");
+            stringBuilder.Replace("6", "Шесть");
+            stringBuilder.Replace("7", "Семь");
+            stringBuilder.Replace("8", "Восемь");
+            stringBuilder.Replace("9", "Девять");
+
+            Console.Clear();
+            str = stringBuilder.ToString();
+            Console.WriteLine($"{str}\n");
         }
     }
 }
