@@ -14,10 +14,10 @@ namespace Homework5
             switch (Console.ReadLine())
             {
                 case "1":
-                    ReadTextFromConsole();
+                    Action(ReadTextFromConsole());
                     break;
                 case "2":
-                    Console.WriteLine("Модуль еще не готов");
+                    Action(ReadTextFromFile().Result);
                     break;
                 default:
                     Console.WriteLine("Нет такой операции");
@@ -25,14 +25,31 @@ namespace Homework5
             }
         }
 
-        static void ReadTextFromConsole()
+        static string ReadTextFromConsole()
         {
             Console.WriteLine("Введите строку");
             string str = Console.ReadLine();
+            return str;
+        }
 
+        static async Task<string> ReadTextFromFile()
+        {
+            string str;
 
+            Console.WriteLine("Введите путь к файлу который нужно прочитать");
+            string path = Console.ReadLine();
+            path = path.Replace('\\', '/');
+            path = path.Trim('"');
 
+            using (StreamReader reader = new StreamReader(path))
+            {
+                str = await reader.ReadToEndAsync();
+                return str;
+            }
+        }
 
+        static void Action(string str)
+        {
             bool run = true;
             while (run)
             {
@@ -68,23 +85,13 @@ namespace Homework5
                         break;
                     case "6":
                         ShowStartEqualEnd(str);
-                            break;
+                        break;
+                    default:
+                        Console.WriteLine("Нет такой операции");
+                        break;
                 }
             }
         }
-
-        //static async Task<> ReadTextFromFile()
-        //{
-        //    Console.WriteLine("Введите путь к файлу который нужно прочитать");
-        //    string path = Console.ReadLine();
-        //    path = path.Replace('\\', '/');
-        //    path = path.Trim('"');
-
-        //    using (StreamReader reader = new StreamReader(path))
-        //    {
-        //        string text = await reader.ReadToEndAsync();
-        //    }
-        //}
 
         static void FindQuantityNumbers(string str)
         {
