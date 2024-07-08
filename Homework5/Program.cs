@@ -62,6 +62,12 @@ namespace Homework5
                         break;
                     case "4":
                         ShowInterrogativeExclamationSentences(str);
+                        break;
+                    case "5":
+                        ShowSentencesNoComma(str);
+                        break;
+                    case "6":
+                        ShowStartEqualEnd(str);
                             break;
                 }
             }
@@ -175,6 +181,38 @@ namespace Homework5
             for (int i = 0; i < internalStr.Length; i++)
             {
                 if (internalStr[i].Contains('!'))
+                {
+                    Console.Write(internalStr[i] + " ");
+                }
+            }
+            Console.WriteLine("\n");
+        }
+
+        static void ShowSentencesNoComma(string str)
+        {
+            Console.Clear();
+            string[] internalStr = Regex.Split(str, @"(?<=[\.!\?])\s+");
+
+            Console.Write("Предложения без запятой: ");
+            for (int i = 0; i < internalStr.Length; i++)
+            {
+                if (!internalStr[i].Contains(','))
+                {
+                    Console.Write(internalStr[i] + " ");
+                }
+            }
+            Console.WriteLine("\n");
+        }
+
+        static void ShowStartEqualEnd(string str)
+        {
+            Console.Clear();
+            string[] internalStr = str.Split(' ');
+
+            Console.WriteLine("Слова начинающиеся и заканчивающиеся на одну и ту же букву:");
+            for (int i = 0; i < internalStr.Length; i++)
+            {
+                if (char.ToLower(internalStr[i][0]) == char.ToLower(internalStr[i][internalStr[i].Length - 1]))
                 {
                     Console.Write(internalStr[i] + " ");
                 }
