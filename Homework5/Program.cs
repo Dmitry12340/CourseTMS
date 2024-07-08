@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Homework5
 {
@@ -58,6 +60,9 @@ namespace Homework5
                     case "3":
                         ReplaceNumbersWithWords(str);
                         break;
+                    case "4":
+                        ShowInterrogativeExclamationSentences(str);
+                            break;
                 }
             }
         }
@@ -147,7 +152,34 @@ namespace Homework5
 
             Console.Clear();
             str = stringBuilder.ToString();
-            Console.WriteLine($"{str}\n");
+            Console.WriteLine($"Результат: {str}\n");
+        }
+
+        static void ShowInterrogativeExclamationSentences(string str)
+        {
+            Console.Clear();
+            //char[] separator = {'.', '!', '?'};
+            string[] internalStr = Regex.Split(str, @"(?<=[\.!\?])\s+");
+
+            Console.Write("Вопросительные предложения: ");
+            for (int i = 0; i < internalStr.Length; i++)
+            {
+                if (internalStr[i].Contains('?'))
+                {
+                    Console.Write(internalStr[i] + " ");
+                }
+            }
+            Console.WriteLine("\n");
+
+            Console.Write("Восклицательные предложения: ");
+            for (int i = 0; i < internalStr.Length; i++)
+            {
+                if (internalStr[i].Contains('!'))
+                {
+                    Console.Write(internalStr[i] + " ");
+                }
+            }
+            Console.WriteLine("\n");
         }
     }
 }
