@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Homework7
 {
-    public class Product
+    public struct ProductStruct
     {
         int id;
         string name;
@@ -46,27 +46,27 @@ namespace Homework7
             }
         }
 
-        public Product(string name, decimal price)
+        public ProductStruct(string name, decimal price)
         {
             Id = 1;
             Name = name;
             Price = price;
             Quantity = 1;
         }
-        public Product(string name, int quantity)
+        public ProductStruct(string name, int quantity)
         {
             Id = 1;
             Name = name;
             Price = 1;
             Quantity = quantity;
         }
-        public Product(string name, decimal price, int quantity)
+        public ProductStruct(string name, decimal price, int quantity)
         {
             Name = name;
             Price = price;
             Quantity = quantity;
         }
-        public Product(string name, int id, decimal price, int quantity) : this(name, price, quantity)
+        public ProductStruct(string name, int id, decimal price, int quantity) : this(name, price, quantity)
         {
             Id = id;
         }
