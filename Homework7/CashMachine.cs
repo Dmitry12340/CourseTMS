@@ -12,9 +12,9 @@ namespace Homework7
         int Nominalbanknote50 = 50;
         int Nominalbanknote100 = 100;
 
-        int Banknote20 { get; set; }
-        int Banknote50 { get; set; }
-        int Banknote100 { get; set; }
+        public int Banknote20 { get; private set; }
+        public int Banknote50 { get; private set; }
+        public int Banknote100 { get; private set; }
         public CashMachine(int banknote20, int banknote50, int banknote100)
         {
             if (banknote20 < 0)
@@ -75,6 +75,7 @@ namespace Homework7
             {
                 count100 = Banknote100;
                 remainderSum = sum - (Nominalbanknote100 * count100);
+                OperationCompleted = false;
             }
             else
             {
@@ -82,7 +83,9 @@ namespace Homework7
             }
 
 
-            if (count100 > 1 && remainderSum == 0)
+
+
+            if (count100 > 0 && remainderSum == 0)
             {
                 OperationCompleted = true;
             }
@@ -93,14 +96,14 @@ namespace Homework7
                 if (count50 > Banknote50)
                 {
                     count50 = Banknote50;
-                    remainderSum = sum - (Nominalbanknote50 * count50);
+                    remainderSum = remainderSum - (Nominalbanknote50 * count50);
                 }
                 else
                 {
                     remainderSum = remainderSum % Nominalbanknote50;
                 }
 
-                if (count50 > 1 && remainderSum == 0)
+                if (count50 > 0 && remainderSum == 0)
                 {
                     OperationCompleted = true;
                 }
@@ -110,14 +113,14 @@ namespace Homework7
                     if (count20 > Banknote20)
                     {
                         count20 = Banknote20;
-                        remainderSum = sum - (Nominalbanknote20 * count50);
+                        remainderSum = remainderSum - (Nominalbanknote20 * count50);
                     }
                     else
                     {
                         remainderSum = remainderSum % Nominalbanknote20;
                     }
-                    
-                    if (count20 > 1 && remainderSum == 0)
+
+                    if (count20 > 0 && remainderSum == 0)
                     {
                         OperationCompleted = true;
                     }
@@ -128,11 +131,13 @@ namespace Homework7
                 }
             }
 
-            //if (OperationCompleted)
-            //{
-            Console.WriteLine($"Banknote100:{count100}\nBanknote50:{count50}\nBanknote20:{count20}\n");
-            //}
-            Console.WriteLine(OperationCompleted);
+            if (OperationCompleted)
+            {
+                Console.WriteLine($"Cash Withdrawal\nBanknote100:{count100}\nBanknote50:{count50}\nBanknote20:{count20}\n");
+                Banknote20 -= count20;
+                Banknote50 -= count50;
+                Banknote100 -= count100;
+            }
             return OperationCompleted;
         }
     }

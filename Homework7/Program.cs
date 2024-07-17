@@ -4,20 +4,14 @@
     {
         static void Main(string[] args)
         {
-            CashMachine cashMachine = new CashMachine(2,4,2);
-            cashMachine.WithdrawCash(340);
-
-
-
-            Console.ReadLine();
             //ДЗ по презентации
 
             //Классы
             Product cheese = new Product("Cheese", 40);
             Product salt = new Product("Salt", 200m);
             Product vine = new Product("Vine", 3000.00m, 200);
-            Product bread = new Product("Bread",2, 250.25m, 4);
-            Product[] myProductsClass = new Product[] {cheese, salt, vine, bread};
+            Product bread = new Product("Bread", 2, 250.25m, 4);
+            Product[] myProductsClass = new Product[] { cheese, salt, vine, bread };
 
             Inventory inventoryClass = new Inventory();
 
@@ -79,8 +73,20 @@
             computer1.ShowParameters();
             computer2.ShowParameters();
 
-            //ДЗ 3
+            Console.Read();
+            Console.Clear();
 
+            //ДЗ 3
+            CashMachine cashMachine = new CashMachine(banknote20: 1, banknote50: 1, banknote100: 1);
+
+            cashMachine.AddBanknoteToCashMachine(banknote20: 1, banknote50: 1, banknote100: 1);
+
+            cashMachine.WithdrawCash(200);
+
+            Console.WriteLine($"Balance:\n" +
+                $"Banknote100:{cashMachine.Banknote100}\n" +
+                $"Banknote50:{cashMachine.Banknote50}\n" +
+                $"Banknote20:{cashMachine.Banknote20}\n");
         }
     }
 }
