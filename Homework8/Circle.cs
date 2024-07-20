@@ -20,7 +20,7 @@ namespace Homework8
 
         public override double FindPerimeter()
         {
-            throw new NotImplementedException();
+            return 2 * Math.PI * _radius;
         }
     }
 }
