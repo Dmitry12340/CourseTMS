@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Homework8
 {
-    abstract class Figure
+    public abstract class Figure
     {
-
+        public abstract double FindArea();
+        public abstract double FindPerimeter();
     }
 }
