@@ -17,6 +17,6 @@ namespace Homework8
         {
             return Name;
         }
-        abstract public void Eat();
+        public abstract void Eat();
     }
 }
