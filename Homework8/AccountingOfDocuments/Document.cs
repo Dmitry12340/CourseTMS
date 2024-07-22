@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Homework8.AccountingOfDocuments
 {
-    internal class ContractSupplyGoods
+    internal abstract class Document
     {
-        private string _typeProduct;
-        private int _quantityProduct;
+        protected int _numberDocument;
+        protected DateTime _dateDocument;
     }
 }
