@@ -8,7 +8,17 @@ namespace Homework8.AccountingOfDocuments
 {
     internal abstract class Document
     {
-        protected int _numberDocument;
+        protected string _numberDocument;
         protected DateTime _dateDocument;
+        protected Document()
+        {
+            _numberDocument = "Not found";
+            _dateDocument = DateTime.Now;
+        }
+        protected Document(string NumberDocument, DateTime DateDocument)
+        {
+            _numberDocument = NumberDocument;
+            _dateDocument = DateDocument;
+        }
     }
 }
