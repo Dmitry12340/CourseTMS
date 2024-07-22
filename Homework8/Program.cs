@@ -1,9 +1,16 @@
-﻿namespace Homework8
+﻿using Homework8.AccountingOfDocuments;
+
+namespace Homework8
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            FinancialInvoice financialInvoice = new FinancialInvoice();
+            financialInvoice.PrintInfo();
+
+
+            Console.ReadLine();
             //Дз по презентации
             Dog dog = new Dog();
             dog.SetName("Шарик");

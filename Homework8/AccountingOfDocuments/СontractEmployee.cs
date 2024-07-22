@@ -8,5 +8,8 @@ namespace Homework8.AccountingOfDocuments
 {
     internal class СontractEmployee
     {
+        private string _name;
+        private DateTime _startDateContract;
+        private DateTime _endDateContract;
     }
 }
