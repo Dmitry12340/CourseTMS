@@ -10,20 +10,16 @@ namespace Homework8.AccountingOfDocuments
     {
         private decimal _totalAmountForMonth;
         private string _departmentCode;
-        //Нужно добавить свойства
-        public FinancialInvoice()
+
+        public FinancialInvoice() : base()
         {
             _totalAmountForMonth = 0;
-            _departmentCode = "Not found";
-            _dateDocument = DateTime.Today;
-            _numberDocument = 10;
+            _departmentCode = "Not found"; 
         }
-        public FinancialInvoice(decimal TotalAmountForMonth, string DepartmentCode, int NumberDocument, DateTime DateDocument)
+        public FinancialInvoice(decimal TotalAmountForMonth, string DepartmentCode, string NumberDocument, DateTime DateDocument) : base(NumberDocument, DateDocument)
         {
             _totalAmountForMonth = TotalAmountForMonth;
             _departmentCode = DepartmentCode;
-            _numberDocument = NumberDocument;
-            _dateDocument = DateDocument;
         }
         public void PrintInfo()
         {
