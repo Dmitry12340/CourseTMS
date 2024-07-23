@@ -8,24 +8,28 @@ namespace Homework8.AccountingOfDocuments
 {
     internal class СontractEmployee : Document
     {
-        private string _name;
-        private DateTime _startDateContract;
-        private DateTime _endDateContract;
+        public string Name {  get; private set; }
+        public DateTime StartDateContract {  get; private set; }
+        public DateTime EndDateContract { get; private set; }
         public СontractEmployee() : base()
         {
-            _name = "Not found";
-            _startDateContract = DateTime.Now;
-            _endDateContract = DateTime.MaxValue;
+            Name = "Not found";
+            StartDateContract = DateTime.Now;
+            EndDateContract = DateTime.MaxValue;
         }
         public СontractEmployee(string Name, DateTime StartDateContract, DateTime EndDateContract, string NumberDocument, DateTime DateDocument) : base(NumberDocument, DateDocument)
         {
-            _name = Name;
-            _startDateContract = StartDateContract;
-            _endDateContract = EndDateContract;
+            this.Name = Name;
+            this.StartDateContract = StartDateContract;
+            EndDateContract = EndDateContract;
         }
-        public void PrintInfo()
+        public override void PrintInfo()
         {
-            Console.WriteLine($"_name = {_name}\n_startDateContract = {_startDateContract}\n_endDateContract = {_endDateContract}\n_dateDocument = {_dateDocument}\n_numberDocument = {_numberDocument}");
+            Console.WriteLine($"Name = {Name}\n" +
+                $"StartDateContract = {StartDateContract}\n" +
+                $"EndDateContract = {EndDateContract}\n" +
+                $"DateDocument = {DateDocument}\n" +
+                $"NumberDocument = {NumberDocument}\n");
         }
     }
 }

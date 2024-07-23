@@ -6,34 +6,6 @@ namespace Homework8
     {
         static void Main(string[] args)
         {
-            FinancialInvoice financialInvoice = new FinancialInvoice();
-            financialInvoice.PrintInfo();
-
-            Console.WriteLine();
-
-            FinancialInvoice financialInvoice2 = new FinancialInvoice(3000, "GFJD000", "450", DateTime.Now);
-            financialInvoice2.PrintInfo();
-
-            Console.WriteLine();
-
-            СontractEmployee сontractEmployee = new СontractEmployee();
-            сontractEmployee.PrintInfo();
-
-            Console.WriteLine();
-
-            СontractEmployee сontractEmployee2 = new СontractEmployee("Dmitry", DateTime.Now, new DateTime(2027, 12, 31), "KHBKHFB", DateTime.Now);
-            сontractEmployee2.PrintInfo();
-
-            Console.WriteLine();
-            ContractSupplyGoods contractSupplyGoods = new ContractSupplyGoods();
-            contractSupplyGoods.PrintInfo();
-
-            Console.WriteLine();
-
-            ContractSupplyGoods contractSupplyGoods2 = new ContractSupplyGoods("Физическое лицо", 200, "HGFKHDG", DateTime.Now);
-            contractSupplyGoods2.PrintInfo();
-
-            Console.ReadLine();
             //Дз по презентации
             Dog dog = new Dog();
             dog.SetName("Шарик");
@@ -89,7 +61,27 @@ namespace Homework8
 
             //Дз 3
 
+            FinancialInvoice financialInvoice = new FinancialInvoice();
+            FinancialInvoice financialInvoice2 = new FinancialInvoice(3000, "GFJD000", "450", DateTime.Now);
+            СontractEmployee сontractEmployee = new СontractEmployee();
+            СontractEmployee сontractEmployee2 = new СontractEmployee("Dmitry", DateTime.Now, new DateTime(2027, 12, 31), "KHBKHFB", DateTime.Now);
+            ContractSupplyGoods contractSupplyGoods = new ContractSupplyGoods();
+            ContractSupplyGoods contractSupplyGoods2 = new ContractSupplyGoods("Физическое лицо", 200, "HGFKHDG", DateTime.Now);
 
+
+
+            Register register = new Register();
+            register.SaveDocument(financialInvoice);
+            register.SaveDocument(financialInvoice2);
+            register.SaveDocument(сontractEmployee);
+            register.SaveDocument(сontractEmployee2);
+            register.SaveDocument(contractSupplyGoods);
+            register.SaveDocument(contractSupplyGoods2);
+            register.SaveDocument(financialInvoice);
+            register.SaveDocument(financialInvoice2);
+            register.SaveDocument(сontractEmployee);
+            register.SaveDocument(сontractEmployee2);
+            register.SaveDocument(contractSupplyGoods);
         }
     }
 }

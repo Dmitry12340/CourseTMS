@@ -6,19 +6,22 @@ using System.Threading.Tasks;
 
 namespace Homework8.AccountingOfDocuments
 {
-    internal abstract class Document
+    abstract class Document : IDocument
     {
-        protected string _numberDocument;
-        protected DateTime _dateDocument;
+        public string NumberDocument { get; private set; }
+        public DateTime DateDocument { get; private set; }
+
+        public Document(string NumberDocument, DateTime DateDocument)
+        {
+            this.NumberDocument = NumberDocument;
+            this.DateDocument = DateDocument;
+        }
         protected Document()
         {
-            _numberDocument = "Not found";
-            _dateDocument = DateTime.Now;
+            NumberDocument = "Not found";
+            DateDocument = DateTime.Now;
         }
-        protected Document(string NumberDocument, DateTime DateDocument)
-        {
-            _numberDocument = NumberDocument;
-            _dateDocument = DateDocument;
-        }
+
+        public abstract void PrintInfo();
     }
 }

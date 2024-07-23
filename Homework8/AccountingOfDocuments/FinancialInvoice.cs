@@ -8,22 +8,25 @@ namespace Homework8.AccountingOfDocuments
 {
     internal class FinancialInvoice : Document
     {
-        private decimal _totalAmountForMonth;
-        private string _departmentCode;
+        public decimal TotalAmountForMonth {  get; private set; }
+        public string DepartmentCode { get; private set; }
 
         public FinancialInvoice() : base()
         {
-            _totalAmountForMonth = 0;
-            _departmentCode = "Not found"; 
+            TotalAmountForMonth = 0;
+            DepartmentCode = "Not found"; 
         }
         public FinancialInvoice(decimal TotalAmountForMonth, string DepartmentCode, string NumberDocument, DateTime DateDocument) : base(NumberDocument, DateDocument)
         {
-            _totalAmountForMonth = TotalAmountForMonth;
-            _departmentCode = DepartmentCode;
+            this.TotalAmountForMonth = TotalAmountForMonth;
+            this.DepartmentCode = DepartmentCode;
         }
-        public void PrintInfo()
+        public override void PrintInfo()
         {
-            Console.WriteLine($"_totalAmountForMonth = {_totalAmountForMonth}\n_departmentCode = {_departmentCode}\n_dateDocument = {_dateDocument}\n_numberDocument = {_numberDocument}");
+            Console.WriteLine($"TotalAmountForMonth = {TotalAmountForMonth}\n" +
+                $"DepartmentCode = {DepartmentCode}\n" +
+                $"DateDocument = {DateDocument}\n" +
+                $"NumberDocument = {NumberDocument}\n");
         }
     }
 }
