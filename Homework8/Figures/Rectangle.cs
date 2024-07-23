@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Homework8
+namespace Homework8.Figures
 {
     public class Rectangle : Figure
     {
