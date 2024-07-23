@@ -17,7 +17,7 @@ namespace Homework8.AccountingOfDocuments
                 documents[count] = document;
                 count++;
 
-                GetDocument(0);
+                GetDocument(count);
             }
             else
             {
@@ -26,7 +26,7 @@ namespace Homework8.AccountingOfDocuments
         }
         public void GetDocument(int index)
         {
-            documents[index].PrintInfo();
+            documents[index-1].PrintInfo();
         }
     }
 }
