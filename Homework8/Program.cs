@@ -1,4 +1,7 @@
 ﻿using Homework8.AccountingOfDocuments;
+using Homework8.Animals;
+using Homework8.Figures;
+using Homework8.Posts;
 
 namespace Homework8
 {
