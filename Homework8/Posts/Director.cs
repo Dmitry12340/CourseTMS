@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Homework8
+namespace Homework8.Posts
 {
-    internal class Worker : IPrintPost
+    internal class Director : IPrintPost
     {
         public void Print()
         {
-            Console.WriteLine($"Печать: Рабочий");
+            Console.WriteLine($"Печать: Директор");
         }
     }
 }

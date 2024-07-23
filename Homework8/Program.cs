@@ -1,4 +1,9 @@
-﻿namespace Homework8
+﻿using Homework8.AccountingOfDocuments;
+using Homework8.Animals;
+using Homework8.Figures;
+using Homework8.Posts;
+
+namespace Homework8
 {
     internal class Program
     {
@@ -59,7 +64,27 @@
 
             //Дз 3
 
+            FinancialInvoice financialInvoice = new FinancialInvoice();
+            FinancialInvoice financialInvoice2 = new FinancialInvoice(3000, "GFJD000", "450", DateTime.Now);
+            СontractEmployee сontractEmployee = new СontractEmployee();
+            СontractEmployee сontractEmployee2 = new СontractEmployee("Dmitry", DateTime.Now, new DateTime(2027, 12, 31), "KHBKHFB", DateTime.Now);
+            ContractSupplyGoods contractSupplyGoods = new ContractSupplyGoods();
+            ContractSupplyGoods contractSupplyGoods2 = new ContractSupplyGoods("Физическое лицо", 200, "HGFKHDG", DateTime.Now);
 
+
+
+            Register register = new Register();
+            register.SaveDocument(financialInvoice);
+            register.SaveDocument(financialInvoice2);
+            register.SaveDocument(сontractEmployee);
+            register.SaveDocument(сontractEmployee2);
+            register.SaveDocument(contractSupplyGoods);
+            register.SaveDocument(contractSupplyGoods2);
+            register.SaveDocument(financialInvoice);
+            register.SaveDocument(financialInvoice2);
+            register.SaveDocument(сontractEmployee);
+            register.SaveDocument(сontractEmployee2);
+            register.SaveDocument(contractSupplyGoods);
         }
     }
 }
