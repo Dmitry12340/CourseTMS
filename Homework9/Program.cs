@@ -7,6 +7,7 @@ namespace Homework9
     {
         static void Main(string[] args)
         {
+            //ДЗ 1
             Debt mortgage = new Debt(120000.0, 1.01);
             mortgage.PrintBalance();
             mortgage.WaitOneYear();
@@ -22,6 +23,11 @@ namespace Homework9
 
             Console.ReadLine();
 
+
+
+
+
+            //ДЗ 3
             Car car = new Car(0);
             car.Drive();
 
