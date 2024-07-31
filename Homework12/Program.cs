@@ -24,10 +24,12 @@
                 catch (WrongLoginException e)
                 {
                     Console.WriteLine(e.Message);
+                    Console.WriteLine(e.StackTrace);
                 }
                 catch (WrongPasswordException e)
                 {
                     Console.WriteLine(e.Message);
+                    Console.WriteLine(e.StackTrace);
                 }
 
                 Console.WriteLine();
