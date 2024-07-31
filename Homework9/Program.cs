@@ -27,7 +27,7 @@ namespace Homework9
 
 
 
-            //ДЗ3
+            //ДЗ 3
             Car car = new Car(0);
             car.Drive();
 
