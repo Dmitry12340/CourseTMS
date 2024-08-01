@@ -24,7 +24,11 @@
             }
             Console.WriteLine();
 
+            //Если текущий объект меньше передоваемого то возвращается -1
+            //Если текущий объект больше передоваемого то возвращается 1
+            //Если объекты равны то возвращается 0
             Console.WriteLine($"Результат сравнения pair1 и pair2 = {pair1.CompareTo(pair2)}");
+            Console.WriteLine($"Результат сравнения pair1 и pair3 = {pair1.CompareTo(pair3)}");
             Console.WriteLine($"Результат сравнения pair2 и pair3 = {pair2.CompareTo(pair3)}");
         }
     }
