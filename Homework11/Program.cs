@@ -24,8 +24,8 @@
             }
             Console.WriteLine();
 
-            Console.WriteLine(pair1.CompareTo(pair2));
-            Console.WriteLine(pair2.CompareTo(pair1));
+            Console.WriteLine($"Результат сравнения pair1 и pair2 = {pair1.CompareTo(pair2)}");
+            Console.WriteLine($"Результат сравнения pair2 и pair3 = {pair2.CompareTo(pair3)}");
         }
     }
 }
