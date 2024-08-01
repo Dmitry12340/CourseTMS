@@ -8,6 +8,7 @@ namespace Homework11
 {
     public class ComparablePair<T, U> : IComparable<ComparablePair<T, U>>
         where T : IComparable<T>
+        where U : IComparable<U>
     {
         public T First { get; }
         public U Second { get; }
@@ -22,7 +23,14 @@ namespace Homework11
             {
                 return 1;
             }
-            return First.CompareTo(other.First);
+
+            int firstComparison = First.CompareTo(other.First);
+            if(firstComparison != 0)
+            {
+                return firstComparison;
+            }
+
+            return Second.CompareTo(other.Second);
         }
     }
 }
