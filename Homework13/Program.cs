@@ -6,31 +6,62 @@ namespace Homework13
     {
         static void Main(string[] args)
         {
-            string path = @"C:\Users\diman\OneDrive\Рабочий стол\4.json";
+            string path = @"C:\Users\diman\source\repos\CourseTMS\Homework13\JsonFiles";
+
+            var files = Directory.GetFileSystemEntries(path, "*.json");
+
+            for (int i = 0; i < files.Length; i++)
+            {
+                string Newfile = files[i].Remove(0, path.Length + 1);
+                Console.WriteLine($"{i + 1} : {Newfile}");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Введите номер файла который нужно десериализовать");
+
+            int numberFile = 0;
+            bool tryParse = false;
+            bool correctInput = false;
+
+            while(!tryParse || !correctInput)
+            {
+                tryParse = int.TryParse(Console.ReadLine(), out numberFile);
+                if(numberFile > 0 && numberFile <= files.Length)
+                {
+                    correctInput = true;
+                }
+                else
+                {
+                    Console.WriteLine("Введены некорректные данные");
+                }
+            }
+            Console.WriteLine();
+
+
 
             string result = "";
-            //SomeClass someClass = new SomeClass(1, "Dmity", 30);
-            //CreateJson(someClass);
-            using (FileStream fileStream = new FileStream(path, FileMode.Open))
+
+            using (FileStream fileStream = new FileStream(files[numberFile - 1], FileMode.Open))
             {
                 using (StreamReader reader = new StreamReader(fileStream))
                 {
                     result = reader.ReadToEnd();
+                    reader.Dispose();
                 }
+                fileStream.Dispose();
             }
             Console.WriteLine(result);
 
 
-            //var deserializedJson = JsonSerializer.Deserialize<SomeClass>(serializedJson);
-            //Console.WriteLine($"Id = {deserializedJson.Id}\nName = {deserializedJson.Name}\nAge = {deserializedJson.Age}");
+            var deserializedJson = JsonSerializer.Deserialize<SomeClass>(result);
+            Console.WriteLine($"Id = {deserializedJson.Id}\nName = {deserializedJson.Name}\nAge = {deserializedJson.Age}");
 
 
         }
-        //Метод для сериализации в json
-        static void CreateJson(Object instance)
-        {
-            string path = @"C:\Users\diman\OneDrive\Рабочий стол\1.json";
 
+        //Метод для сериализации в json
+        static void CreateJson(Object instance, string path)
+        {
             var serializedJson = JsonSerializer.Serialize(instance);
             Console.WriteLine(serializedJson);
 
