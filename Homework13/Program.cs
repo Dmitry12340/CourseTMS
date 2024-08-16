@@ -6,7 +6,8 @@ namespace Homework13
     {
         static void Main(string[] args)
         {
-            string path = @"C:\Users\diman\source\repos\CourseTMS\Homework13\JsonFiles";
+            //string path = @"C:\Users\diman\source\repos\CourseTMS\Homework13\JsonFiles";//Домашний компьютер
+            string path = @"C: \Users\kubte\source\repos\Dmitry12340\CourseTMS\Homework13\JsonFiles";//Рабочий компьютер
 
             var files = Directory.GetFileSystemEntries(path, "*.json");
 
@@ -23,10 +24,10 @@ namespace Homework13
             bool tryParse = false;
             bool correctInput = false;
 
-            while(!tryParse || !correctInput)
+            while (!tryParse || !correctInput)
             {
                 tryParse = int.TryParse(Console.ReadLine(), out numberFile);
-                if(numberFile > 0 && numberFile <= files.Length)
+                if (numberFile > 0 && numberFile <= files.Length)
                 {
                     correctInput = true;
                 }
