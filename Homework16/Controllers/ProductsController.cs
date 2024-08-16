@@ -61,7 +61,18 @@ namespace Homework16.Controllers
         [Route("addProduct")]
         public IActionResult AddProduct(Product product)
         {
-            if (product == null)
+            bool existId = false;
+            //Проверяем наличие переданного Id
+            for (int i = 0; i < products.Count; i++)
+            {
+                if (products[i].Id == product.Id)
+                {
+                    existId = true;
+                    break;
+                }
+            }
+
+            if (existId)
             {
                 return BadRequest();
             }
