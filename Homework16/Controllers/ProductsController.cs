@@ -45,10 +45,22 @@ namespace Homework16.Controllers
         [Route("deleteProduct")]
         public IActionResult DeleteProduct(int id)
         {
-            var existProduct = products.FirstOrDefault(products => products.Id == id);
-            if (existProduct != null)
+            bool existId = false;
+            int count = 0;
+            //Проверяем наличие переданного Id
+            for (int i = 0; i < products.Count; i++)
             {
-                products.Remove(existProduct);
+                if (products[i].Id == id)
+                {
+                    existId = true;
+                    count = i;
+                    break;
+                }
+            }
+
+            if (existId)
+            {
+                products.RemoveAt(count);
                 return Ok();
             }
             else
@@ -62,7 +74,7 @@ namespace Homework16.Controllers
         public IActionResult AddProduct(Product product)
         {
             bool existId = false;
-            //Проверяем наличие переданного Id
+            //Проверяем наличие переданного элемента по Id
             for (int i = 0; i < products.Count; i++)
             {
                 if (products[i].Id == product.Id)
