@@ -93,5 +93,19 @@ namespace Homework17.Controllers
                 return Ok();
             }
         }
+
+        [HttpGet]
+        [Route("test")]
+        public IActionResult GetProduct()
+        {
+            var product = new Product()
+            {
+                Id = 1,
+                Name = "Test View",
+                Quantity = 1
+            };
+
+            return View(product);
+        }
     }
 }
