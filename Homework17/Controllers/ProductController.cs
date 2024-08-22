@@ -95,17 +95,10 @@ namespace Homework17.Controllers
         }
 
         [HttpGet]
-        [Route("test")]
-        public IActionResult GetProduct()
+        [Route("testProduct")]
+        public IActionResult TestProduct()
         {
-            var product = new Product()
-            {
-                Id = 1,
-                Name = "Test View",
-                Quantity = 1
-            };
-
-            return View(product);
+            return View("GetProduct");
         }
     }
 }
