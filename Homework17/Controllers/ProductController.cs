@@ -7,7 +7,7 @@ namespace Homework17.Controllers
     [ApiController]
     public class ProductController : Controller
     {
-        private List<Product> products = new List<Product>()
+        public List<Product> products = new List<Product>()
         {
             new Product {Id = 1, Name = "Product 1", Quantity = 200},
             new Product {Id = 2, Name = "Product 6", Quantity = 300},
@@ -16,7 +16,7 @@ namespace Homework17.Controllers
         };
 
         [HttpPost]
-        [Route("modifyProduct")]
+        [Route("ModifyProduct")]
         public IActionResult ModifyProduct(Product product)
         {
             var existProduct = products.FirstOrDefault(product => product.Id == product.Id);
@@ -34,14 +34,14 @@ namespace Homework17.Controllers
         }
 
         [HttpGet]
-        [Route("getProducts")]
+        [Route("GetProducts")]
         public IActionResult GetProducts()
         {
-            return Ok(products);
+            return View("GetProduct", products);
         }
 
         [HttpPost]
-        [Route("deleteProduct")]
+        [Route("DeleteProduct")]
         public IActionResult DeleteProduct(int id)
         {
             bool existId = false;
@@ -69,7 +69,7 @@ namespace Homework17.Controllers
         }
 
         [HttpPost]
-        [Route("addProduct")]
+        [Route("AddProduct")]
         public IActionResult AddProduct(Product product)
         {
             bool existId = false;
@@ -90,15 +90,36 @@ namespace Homework17.Controllers
             else
             {
                 products.Add(product);
-                return Ok();
+                return View("MenuAddProduct");
             }
         }
 
         [HttpGet]
-        [Route("testProduct")]
-        public IActionResult TestProduct()
+        [Route("MenuProduct")]
+        public IActionResult MenuProduct()
         {
-            return View("GetProduct");
+            return View("MenuProduct");
+        }
+
+        [HttpGet]
+        [Route("MenuAddProduct")]
+        public IActionResult MenuAddProduct()
+        {
+            return View("MenuAddProduct");
+        }
+
+        [HttpGet]
+        [Route("MenuModifyProduct")]
+        public IActionResult MenuModifyProduct()
+        {
+            return View("MenuModifyProduct");
+        }
+
+        [HttpGet]
+        [Route("MenuDeleteProduct")]
+        public IActionResult MenuDeleteProduct()
+        {
+            return View("MenuDeleteProduct");
         }
     }
 }

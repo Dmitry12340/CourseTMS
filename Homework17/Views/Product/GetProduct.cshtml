@@ -1,22 +1,22 @@
-﻿@{
-    ViewData["Title"] = "Product";
+﻿@using Homework17.Controllers
+@{
+    ViewData["Title"] = "Get Product";
 }
- @model Product
+@model List<Product>
 
 <h1>@ViewData["Title"]</h1>
-<p>Actions with products</p>
 <p>
-    <a type="button" class="btn btn-outline-secondary" asp-controller="Product" asp-action="getProducts">Get product</a>
-    <a type="button" class="btn btn-outline-secondary" asp-controller="Product" asp-action="getProducts">Add product</a>
-    <a type="button" class="btn btn-outline-secondary" asp-controller="Product" asp-action="getProducts">Delete product</a>
-    <a type="button" class="btn btn-outline-secondary" asp-controller="Product" asp-action="getProducts">Modify product</a>
-</p>
-
-<p>
-    @* @Html.TextBox("Id", Model.Id); *@
-    @* @Html.TextBoxFor(model => model.Id); *@
-    @* @Html.TextBox("Name", Model.Name); *@
-    @* @Html.TextBoxFor(model => model.Name); *@
-    @* @Html.TextBox("Quantity", Model.Quantity); *@
-    @* @Html.TextBoxFor(model => model.Quantity); *@
+    <html>
+    <body>
+        <h1>Products</h1>
+        <ul>
+            @foreach (var product in Model)
+            {
+                <li>
+                    <strong>@product.Name</strong> - Quantity: @product.Quantity - Id: @product.Id
+                </li>
+            }
+        </ul>
+    </body>
+</html>
 </p>

@@ -1,0 +1,29 @@
+﻿@using Homework17.Controllers
+@{
+    ViewData["Title"] = "Modify Product";
+}
+@model Product
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    @using (Html.BeginForm("ModifyProduct", "Product", FormMethod.Post))
+    {
+        <div>
+            @Html.LabelFor(Model => Model.Id)
+            @Html.TextBoxFor(Model => Model.Id)
+        </div>
+        <div>
+            @Html.LabelFor(Model => Model.Name)
+            @Html.TextBoxFor(Model => Model.Name)
+        </div>
+        <div>
+            @Html.LabelFor(Model => Model.Quantity)
+            @Html.TextBoxFor(Model => Model.Quantity)
+        </div>
+
+        <div>
+            <button type="submit" value="ModifyProduct" />
+        </div>
+    }
+</div>
