@@ -1,0 +1,14 @@
+﻿@using Homework17.Controllers
+@{
+    ViewData["Title"] = "Product";
+}
+@model List<Product>
+
+<h1>@ViewData["Title"]</h1>
+<p>Actions with products</p>
+<p>
+    <a type="button" class="btn btn-outline-secondary" asp-controller="Product" asp-action="GetProducts">Get product</a>
+    <a type="button" class="btn btn-outline-secondary" asp-controller="Product" asp-action="MenuAddProduct">Add product</a>
+    <a type="button" class="btn btn-outline-secondary" asp-controller="Product" asp-action="MenuDeleteProduct">Delete product</a>
+    <a type="button" class="btn btn-outline-secondary" asp-controller="Product" asp-action="MenuModifyProduct">Modify product</a>
+</p>

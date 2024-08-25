@@ -49,7 +49,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework15MVC", "Homework15
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework15Blazor", "Homework15Blazor\Homework15Blazor.csproj", "{92893A2D-CF27-4F3F-B64A-C443AAECBE95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework16", "Homework16\Homework16.csproj", "{63AD7A26-C206-4469-AAD0-48244BDCA705}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework16", "Homework16\Homework16.csproj", "{63AD7A26-C206-4469-AAD0-48244BDCA705}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework17", "Homework17\Homework17.csproj", "{1963A1EB-F315-4540-9CD4-DA2B81ADB29E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -153,6 +155,10 @@ Global
 		{63AD7A26-C206-4469-AAD0-48244BDCA705}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63AD7A26-C206-4469-AAD0-48244BDCA705}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63AD7A26-C206-4469-AAD0-48244BDCA705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1963A1EB-F315-4540-9CD4-DA2B81ADB29E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1963A1EB-F315-4540-9CD4-DA2B81ADB29E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1963A1EB-F315-4540-9CD4-DA2B81ADB29E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1963A1EB-F315-4540-9CD4-DA2B81ADB29E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

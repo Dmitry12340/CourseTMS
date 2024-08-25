@@ -1,0 +1,22 @@
+﻿@using Homework17.Controllers
+@{
+    ViewData["Title"] = "Get Product";
+}
+@model List<Product>
+
+<h1>@ViewData["Title"]</h1>
+<p>
+    <html>
+    <body>
+        <h1>Products</h1>
+        <ul>
+            @foreach (var product in Model)
+            {
+                <li>
+                    <strong>@product.Name</strong> - Quantity: @product.Quantity - Id: @product.Id
+                </li>
+            }
+        </ul>
+    </body>
+</html>
+</p>
