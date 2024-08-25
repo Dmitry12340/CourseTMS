@@ -1,0 +1,21 @@
+﻿@using Homework17.Controllers
+@{
+    ViewData["Title"] = "Modify Product";
+}
+@model Product
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    @using (Html.BeginForm("DeleteProduct", "Product", FormMethod.Post))
+    {
+        <div>
+            @Html.LabelFor(Model => Model.Id)
+            @Html.TextBoxFor(Model => Model.Id)
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-outline-secondary" value="DeleteProduct"/>
+        </div>
+    }
+</div>
