@@ -4,7 +4,6 @@ using Homework17.Models;
 namespace Homework17.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
     public class ProductController : Controller
     {
         public List<Product> products = new List<Product>()
