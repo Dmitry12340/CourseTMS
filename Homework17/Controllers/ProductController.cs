@@ -24,7 +24,7 @@ namespace Homework17.Controllers
             {
                 existProduct.Name = product.Name;
                 existProduct.Quantity = product.Quantity;
-                return Ok();
+                return View("MenuModifyProduct");
             }
             else
             {
@@ -59,7 +59,7 @@ namespace Homework17.Controllers
             if (existId)
             {
                 products.RemoveAt(count);
-                return Ok();
+                return View("MenuDeleteProduct");
             }
             else
             {
